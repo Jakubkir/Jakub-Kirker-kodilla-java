@@ -1,1 +1,3 @@
-rootProject.name = 'kodilla-course'
+gradle bulidrootProject.name = 'kodilla-course'
+include 'kodilla-testing'
+
