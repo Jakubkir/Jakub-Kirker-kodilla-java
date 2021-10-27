@@ -8,11 +8,11 @@ import org.junit.jupiter.api.*;
 
 
 public class CollectionTestSuite {
-    @Before
+    @BeforeEach
     public void before(){
         System.out.println("Test case: begin");
     }
-    @After
+    @AfterEach
     public void after(){
         System.out.println("Test case: end");
     }
@@ -30,7 +30,7 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList(){
         //Given
         ArrayList<Integer> list=new ArrayList<Integer>(Arrays.asList(34,777,22,199,18,15,3,12,4));
-        ArrayList<Integer> oddList=new ArrayList<Integer>(Arrays.asList(34,22,12,18));
+        ArrayList<Integer> oddList=new ArrayList<Integer>(Arrays.asList(34,22,18,12,4));
 
         //When
         ArrayList<Integer> listNumbers=OddNumbersExterminator.exterminate(list);
