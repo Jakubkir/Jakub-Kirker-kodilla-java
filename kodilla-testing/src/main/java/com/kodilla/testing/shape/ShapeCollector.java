@@ -1,6 +1,7 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShapeCollector {
     private ArrayList<Shape> shapeList = new ArrayList<Shape>();
@@ -25,7 +26,7 @@ public class ShapeCollector {
         }
     }
 
-    public ArrayList<Shape> showFigures() {
+    public List<Shape> showFigures() {
         for (Shape figures : shapeList) {
             System.out.println(figures);
         }
@@ -39,7 +40,7 @@ public class ShapeCollector {
                 '}';
     }
 
-    public ArrayList<Shape> getShapeList() {
+    public List<Shape> getShapeList() {
         return shapeList;
     }
 }

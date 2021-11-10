@@ -1,7 +1,5 @@
 package com.kodilla.testing.shape;
 
-import com.kodilla.testing.shape.Shape;
-
 public class Triangle {
     String shapeName;
     double field;
