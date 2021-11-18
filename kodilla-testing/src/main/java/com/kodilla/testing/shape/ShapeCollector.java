@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeCollector {
-    private ArrayList<Shape> shapeList = new ArrayList<Shape>();
+    private List<Shape> shapeList = new ArrayList<Shape>();
 
-    public ShapeCollector(ArrayList<Shape> shapeList) {
+    public ShapeCollector(List<Shape> shapeList) {
         this.shapeList = shapeList;
     }
 

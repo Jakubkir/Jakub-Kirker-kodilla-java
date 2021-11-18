@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import com.kodilla.testing.shape.ShapeCollector;
 
@@ -42,15 +43,15 @@ public class ShapeCollectorTestSuite {
         expectedList.add(new Circle(23));
         expectedList.add(new Triangle(12,18));
         expectedList.add(new Square(12));
-
-        int expectedListSize = expectedListSize.getShapeList().size();
+        ShapeCollector check = new ShapeCollector(testList);
+        int expectedListSize = expectedList.size();
         //When
-        testList.addFigure(new Square(12));
+        check.addFigure(new Square(12));
         
-        int actualListSieze = testList.getShapeList().size();
+        int actualListSieze = check.getShapeList().size();
         //Then
         
-        Assert.assertEquals(expectedListSize, actualListSieze);
+        Assertions.assertEquals(expectedListSize, actualListSieze);
     }
 
     @Test
@@ -60,16 +61,16 @@ public class ShapeCollectorTestSuite {
                 new Circle(23),
                 new Triangle(12, 18),
                 new Square(12))));
-        ShapeCollector expectedList = new ShapeCollector(new ArrayList<Shape>(Arrays.asList(
+       List<Shape> expectedList = Arrays.asList(
                 new Circle(23),
-                new Triangle(12, 18))));
+                new Triangle(12, 18));
 
-        int expectedListSize = expectedListSize.getShapeList().size();
+        int expectedListSize = expectedList.size();
         //When
-        testList.removeFigure(Square(12));
+        testList.removeFigure(new Square(12));
         int actualListSieze = testList.getShapeList().size();
         //Then
-        Assert.assertEquals(expectedListSize, actualListSieze);
+        Assertions.assertEquals(expectedListSize, actualListSieze);
     }
 
     @Test
@@ -103,6 +104,6 @@ public class ShapeCollectorTestSuite {
         //When
 
         //Then
-        Assert.assertEquals(testList, ShapeCollector.showFigures());
+        testList.showFigures();
     }
 }

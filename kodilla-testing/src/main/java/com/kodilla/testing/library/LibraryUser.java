@@ -7,6 +7,15 @@ public class LibraryUser {
     private String lastname;
     private String peselId;
 
+    public LibraryUser(String fristname, String lastname, String peselId) {
+        this.fristname = fristname;
+        this.lastname = lastname;
+        this.peselId = peselId;
+    }
+
+    public LibraryUser() {
+    }
+
     public String getFristname() {
         return fristname;
     }
