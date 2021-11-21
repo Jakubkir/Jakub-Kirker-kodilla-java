@@ -10,7 +10,7 @@ public class WorldTestSuite {
 
     @Test
     void estGetPeopleQuantity(){
-        //Giveb
+        //Given
         //Create country
         Country country1 = new Country("Poland",new BigDecimal(1));
         Country country2 = new Country("England",new BigDecimal(1));
@@ -43,8 +43,7 @@ public class WorldTestSuite {
         BigDecimal all = world.getPeopleQuantityAll();
 
         //Then
-        assertEquals(7,all);
-
+        assertEquals(new BigDecimal(7),all);
 
     }
 
