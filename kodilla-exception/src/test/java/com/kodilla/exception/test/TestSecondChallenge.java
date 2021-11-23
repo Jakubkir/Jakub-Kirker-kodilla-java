@@ -11,7 +11,7 @@ public class TestSecondChallenge {
         // Given
         SecondChallenge secondChallenge = new SecondChallenge();
         //When and Then
-        assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1, 4));
+        assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1, 6));
         assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(2, 1.5));
     }
 }
