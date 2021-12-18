@@ -6,4 +6,7 @@ findProject(':kodilla-testing:User')?.name = 'user'
 include 'untitled'
 include 'kodilla-stream'
 include 'kodilla-exception'
+include 'Kodilla-project'
+include 'untitled1'
+include 'kodilla-good-patterns'
 
