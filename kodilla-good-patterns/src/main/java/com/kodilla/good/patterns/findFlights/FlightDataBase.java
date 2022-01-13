@@ -3,7 +3,7 @@ package com.kodilla.good.patterns.findFlights;
 import java.util.HashSet;
 import java.util.Set;
 
-public class flightDataBase {
+public class FlightDataBase {
     private static final String WAW = "Warszawa";
     private static final String KRK = "Kraków";
     private static final String GDA = "Gdańsk";
@@ -27,6 +27,11 @@ public class flightDataBase {
         flightSet.add(new Flight(GDA, LOD));
         flightSet.add(new Flight(GDA, RZE));
         flightSet.add(new Flight(LOD, RZE));
+        flightSet.add(new Flight(LOD, KRK));
+        flightSet.add(new Flight(LOD, GDA));
+        flightSet.add(new Flight(RZE, GDA));
+        flightSet.add(new Flight(RZE, WAW));
+        flightSet.add(new Flight(RZE, KRK));
 
     }
 
@@ -36,7 +41,7 @@ public class flightDataBase {
 
     @Override
     public String toString() {
-        return "flightDataBase{" +
+        return "FlightDataBase{" +
                 "flightSet=+" + flightSet +
                 '}';
     }

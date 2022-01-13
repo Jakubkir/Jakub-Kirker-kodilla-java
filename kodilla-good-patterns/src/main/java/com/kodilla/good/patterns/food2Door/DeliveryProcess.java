@@ -2,9 +2,9 @@ package com.kodilla.good.patterns.food2Door;
 
 public class DeliveryProcess {
     private static String foodProducent;
-    String product;
-    int quantity;
-    String unit;
+    private String product;
+    private int quantity;
+    private String unit;
 
     public DeliveryProcess(String foodProducent, String product, int quantity, String unit) {
         this.foodProducent = foodProducent;

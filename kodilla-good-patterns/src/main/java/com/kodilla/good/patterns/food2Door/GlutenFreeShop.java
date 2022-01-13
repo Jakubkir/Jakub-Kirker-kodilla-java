@@ -3,7 +3,7 @@ package com.kodilla.good.patterns.food2Door;
 public class GlutenFreeShop implements FoodProducent {
     @Override
     public boolean process(String foodProducent, String product, int quantity, String unit) {
-        if ((quantity > 100) && (unit == "kg")) {
+        if ((quantity > 100) && ("kg".equals(unit))) {
             System.out.println("The " + foodProducent + " can delivery product.");
             return true;
         }else {

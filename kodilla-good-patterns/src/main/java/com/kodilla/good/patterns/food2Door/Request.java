@@ -5,7 +5,7 @@ public class Request {
     public void order(DeliveryProcess deliveryProcess) {
         try {
             FoodProducent name = FindProducent.find(DeliveryProcess.getFoodProducent());
-            boolean isAceppted = name.process(deliveryProcess.getFoodProducent(),
+            boolean isAceppted = name.process(DeliveryProcess.getFoodProducent(),
                     deliveryProcess.getProduct(),
                     deliveryProcess.getQuantity(),
                     deliveryProcess.getUnit());

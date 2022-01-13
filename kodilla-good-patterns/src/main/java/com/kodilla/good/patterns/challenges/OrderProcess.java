@@ -15,11 +15,11 @@ public class OrderProcess {
 
     public OrderDto process(final OrderRequest orderRequest) {
         boolean isOrder = orderService.order(orderRequest.getUser(),orderRequest.getFrom(),
-                orderRequest.getDeliveryMethod());
+                orderRequest.getDeliveryMethod(), orderRequest.getOrderedProduct());
 
         if (isOrder) {
             informationService.inform(orderRequest.getUser());
-            orderRepository.createOrder(orderRequest.getUser(), orderRequest.getFrom(), orderRequest.getDeliveryMethod());
+            orderRepository.createOrder(orderRequest.getUser(), orderRequest.getFrom(), orderRequest.getDeliveryMethod(), orderRequest.getOrderedProduct());
             return new OrderDto(orderRequest.getUser(), true);
         } else {
             return new OrderDto(orderRequest.getUser(), false);

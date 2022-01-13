@@ -1,12 +1,13 @@
 rootProject.name = 'kodilla-course'
 include 'kodilla-testing'
-include 'User'
-include 'kodilla-testing:User'
-findProject(':kodilla-testing:User')?.name = 'user'
-include 'untitled'
 include 'kodilla-stream'
 include 'kodilla-exception'
 include 'Kodilla-project'
-include 'untitled1'
 include 'kodilla-good-patterns'
+include 'kodilla-spring-intro'
+include 'kodilla-spring'
+include 'kodilla-spring-web'
+include 'kodilla-patterns'
+
+
 
