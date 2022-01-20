@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WorldTestSuite {
 
     @Test
-    void estGetPeopleQuantity(){
+    void estGetPeopleQuantity() {
         //Given
         //Create country
-        Country country1 = new Country("Poland",new BigDecimal(1));
-        Country country2 = new Country("England",new BigDecimal(1));
-        Country country3 = new Country("Spain",new BigDecimal(1));
-        Country country4 = new Country("China",new BigDecimal(1));
-        Country country5 = new Country("Japan",new BigDecimal(1));
-        Country country6 = new Country("RPA",new BigDecimal(1));
-        Country country7 = new Country("Egipt",new BigDecimal(1));
+        Country country1 = new Country("Poland", new BigDecimal(1));
+        Country country2 = new Country("England", new BigDecimal(1));
+        Country country3 = new Country("Spain", new BigDecimal(1));
+        Country country4 = new Country("China", new BigDecimal(1));
+        Country country5 = new Country("Japan", new BigDecimal(1));
+        Country country6 = new Country("RPA", new BigDecimal(1));
+        Country country7 = new Country("Egipt", new BigDecimal(1));
         Continent continent1 = new Continent("Europe");
         Continent continent2 = new Continent("Asia");
         Continent continent3 = new Continent("Africa");
@@ -43,7 +43,7 @@ public class WorldTestSuite {
         BigDecimal all = world.getPeopleQuantityAll();
 
         //Then
-        assertEquals(new BigDecimal(7),all);
+        assertEquals(new BigDecimal(7), all);
 
     }
 

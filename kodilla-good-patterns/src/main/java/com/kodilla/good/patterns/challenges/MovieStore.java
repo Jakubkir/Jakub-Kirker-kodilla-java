@@ -27,7 +27,7 @@ public class MovieStore {
 
         List<String> avengersTranslations = new ArrayList<>();
         avengersTranslations.add(AvengersPL);
-        avengersTranslations.add(AvengersEN );
+        avengersTranslations.add(AvengersEN);
 
         List<String> flashTranslations = new ArrayList<>();
         flashTranslations.add(FlashPL);

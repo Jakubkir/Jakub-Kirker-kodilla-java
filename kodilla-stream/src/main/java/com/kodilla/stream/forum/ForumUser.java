@@ -62,11 +62,13 @@ public final class ForumUser {
     public int hashCode() {
         return username.hashCode();
     }
+
     public Set<String> getLocationsOfFriends() {
         return friends.stream()
                 .map(ForumUser::getLocation)                    // [1]
                 .collect(Collectors.toSet());
     }
+
     public Set<String> getLocationsOfFriendsOfFriends() {
         return friends.stream()                               // [1]
                 .flatMap(user -> user.getFriends().stream())       // [2]

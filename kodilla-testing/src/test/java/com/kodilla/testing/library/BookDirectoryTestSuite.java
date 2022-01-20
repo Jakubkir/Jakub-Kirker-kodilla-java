@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class BookDirectoryTestSuite {
 
-//    @Test
+    //    @Test
 //    void testListBooksWithConditionsReturnList() {
 //        assertTrue(false);
 //    }
@@ -32,7 +32,9 @@ class BookDirectoryTestSuite {
 //    }
     @Mock
     private LibraryDatabase libraryDatabaseMock;
-    @Test                                                                               // [1]
+
+    @Test
+        // [1]
     void testListBooksWithConditionsReturnList() {                                      // [2]
 
         // Given
@@ -63,6 +65,7 @@ class BookDirectoryTestSuite {
         }
         return resultList;
     }
+
     @Test
     void testListBooksWithConditionMoreThan20() {
 
@@ -91,6 +94,7 @@ class BookDirectoryTestSuite {
 
     private void assertEquals(int i, int size) {
     }
+
     @Test
     void testListBooksWithConditionFragmentShorterThan3() {                          // [1]
         // Given
@@ -104,6 +108,7 @@ class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());                                     // [5]
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());    // [6]
     }
+
     @Test
     void testlistBooksInHandsOf0book() {
         //Given
@@ -119,6 +124,7 @@ class BookDirectoryTestSuite {
         assertEquals(0, theEmptyList.size());
 
     }
+
     @Test
     void testlistBooksInHandsOf1book() {
         //Given
@@ -143,12 +149,13 @@ class BookDirectoryTestSuite {
         assertEquals(1, listOf1.size());
         assertEquals(5, listOf5.size());
     }
+
     @Test
     void testlistBooksInHandsOf5book() {
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        LibraryUser any = new LibraryUser("Adam","Nowak","958");
+        LibraryUser any = new LibraryUser("Adam", "Nowak", "958");
 
         //When
         List<Book> theListOf5 = bookLibrary.listBooksInHandsOf(any);

@@ -4,7 +4,6 @@ import com.kodilla.testing.SimpleUser;
 import org.junit.jupiter.api.*;
 
 
-
 public class ForumTestSuite {
     @BeforeEach
     public void before() {

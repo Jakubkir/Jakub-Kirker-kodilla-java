@@ -6,15 +6,15 @@ public class OrderProcess {
     private OrderRepository orderRepository;
 
     public OrderProcess(final InformationService informationService,
-                          final OrderService orderService,
-                          final OrderRepository orderRepository) {
+                        final OrderService orderService,
+                        final OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isOrder = orderService.order(orderRequest.getUser(),orderRequest.getFrom(),
+        boolean isOrder = orderService.order(orderRequest.getUser(), orderRequest.getFrom(),
                 orderRequest.getDeliveryMethod(), orderRequest.getOrderedProduct());
 
         if (isOrder) {

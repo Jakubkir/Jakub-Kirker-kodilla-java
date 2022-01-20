@@ -38,19 +38,19 @@ public class ShapeCollectorTestSuite {
         //Given
         List<Shape> testList = new ArrayList<>();
         testList.add(new Circle(23));
-        testList.add(new Triangle(12,18));
+        testList.add(new Triangle(12, 18));
         List<Shape> expectedList = new ArrayList<>();
         expectedList.add(new Circle(23));
-        expectedList.add(new Triangle(12,18));
+        expectedList.add(new Triangle(12, 18));
         expectedList.add(new Square(12));
         ShapeCollector check = new ShapeCollector(testList);
         int expectedListSize = expectedList.size();
         //When
         check.addFigure(new Square(12));
-        
+
         int actualListSieze = check.getShapeList().size();
         //Then
-        
+
         Assertions.assertEquals(expectedListSize, actualListSieze);
     }
 
@@ -61,7 +61,7 @@ public class ShapeCollectorTestSuite {
                 new Circle(23),
                 new Triangle(12, 18),
                 new Square(12))));
-       List<Shape> expectedList = Arrays.asList(
+        List<Shape> expectedList = Arrays.asList(
                 new Circle(23),
                 new Triangle(12, 18));
 

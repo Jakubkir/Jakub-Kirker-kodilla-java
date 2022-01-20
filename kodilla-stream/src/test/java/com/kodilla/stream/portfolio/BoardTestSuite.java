@@ -164,7 +164,7 @@ class BoardTestSuite {
                 .map(Task::getCreated)
                 .map(d -> ChronoUnit.DAYS.between(d, LocalDate.now()))
                 .reduce(0L, (sum, current) -> sum = sum + current);
-        double average = (double) sumOfTasks /  numberOfTasks;
+        double average = (double) sumOfTasks / numberOfTasks;
 
         //Then
         assertEquals(10, average, 0.0001);

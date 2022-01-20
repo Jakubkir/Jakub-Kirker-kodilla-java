@@ -7,13 +7,13 @@ import java.util.Objects;
 public final class Continent {
 
 
-
     private final String nameContinent;
     private final List<Country> listCountry = new ArrayList<>();
 
     public Continent(String nameContinent) {
         this.nameContinent = nameContinent;
     }
+
     public String getNameContinent() {
         return nameContinent;
     }
@@ -21,6 +21,7 @@ public final class Continent {
     public List<Country> getListCountry() {
         return listCountry;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,10 +34,10 @@ public final class Continent {
     public int hashCode() {
         return Objects.hash(nameContinent, listCountry);
     }
-    public void addCountry(Country country){
+
+    public void addCountry(Country country) {
         listCountry.add(country);
     }
-
 
 
 }

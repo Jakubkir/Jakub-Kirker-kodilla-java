@@ -2,7 +2,7 @@ package com.kodilla.testing.shape;
 
 import java.util.Objects;
 
-public class Square implements Shape{
+public class Square implements Shape {
 
     String shapeName;
     double field;

@@ -3,7 +3,7 @@ package com.kodilla.testing.shape;
 
 import java.util.Objects;
 
-public class Circle implements Shape{
+public class Circle implements Shape {
 
     String shapeName;
     double field;

@@ -13,7 +13,7 @@ public class ForumUser {
         this.signature = signature;
         this.username = username;
         this.sex = sex;
-        this.brightDate = LocalDate.of(yearOfBirth,monthOfBright,dayOfBright);
+        this.brightDate = LocalDate.of(yearOfBirth, monthOfBright, dayOfBright);
         this.numberOfPosts = numberOfPosts;
     }
 

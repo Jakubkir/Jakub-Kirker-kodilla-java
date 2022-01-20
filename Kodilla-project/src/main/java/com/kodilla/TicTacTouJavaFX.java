@@ -1,7 +1,6 @@
 package com.kodilla;
 
 import javafx.application.Application;
-import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -12,49 +11,46 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import org.w3c.dom.css.RGBColor;
 
-import javax.swing.text.AttributeSet;
-import javax.swing.text.Style;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 
 public class TicTacTouJavaFX extends Application {
     private boolean isTurnX = true;
     private boolean isComputerX = false;
-    private boolean easyLevel = true;
     private final Image circle = new Image("file:src/main/resources/kolko.png");
     private final Image x = new Image("file:src/main/resources/x.png");
     private final Image tlo = new Image("file:src/main/resources/tlo3.jpg");
     private final Image tlo2 = new Image("file:src/main/resources/tlo2.png");
     private Text winnerText;
-    int count = 0;
     private List<Button> buttons = new LinkedList<Button>();
     private List<Button> emptyButtons = new LinkedList<Button>();
     private List<Button> buttonsPlayer = new LinkedList<Button>();
     private Random random = new Random();
     private static final HashMap<String, Integer> score = new HashMap<String, Integer>();
+    private ComputerStrategy computerStrategy = new ComputerEasyLevelStrategy();
 
 
     private final Text tableX = new Text("X = ");
     private final Text tableO = new Text("0 = ");
+
     static {
         score.put("X", 0);
         score.put("0", 0);
     }
 
-
     public static void main(String[] args) {
         launch(args);
-
     }
-
 
     public void startGame(Stage stage) {
 
+        computerStrategy = new ComputerEasyLevelStrategy();
         tableX.setFill(Color.WHITE);
         tableO.setFill(Color.WHITE);
-
 
         BackgroundSize backgroundSize = new BackgroundSize(300, 300, true, true, true, false);
         BackgroundImage backgroundImage = new BackgroundImage(tlo, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
@@ -62,16 +58,12 @@ public class TicTacTouJavaFX extends Application {
         BackgroundImage backgroundImage2 = new BackgroundImage(tlo2, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background2 = new Background(backgroundImage);
 
-
-//
-
         Button newGame = new Button();
         newGame.setText("New Game");
 //        newGame.setBackground(null);
         newGame.setPrefSize(100, 50);
         newGame.setOnAction(e -> {
             reset(stage);
-
 
         });
 
@@ -98,11 +90,8 @@ public class TicTacTouJavaFX extends Application {
         level.setText("HARD");
         level.setPrefSize(100, 50);
         level.setOnAction(e -> {
-            easyLevel = false;
-
-
+            computerStrategy = new ComputerHardLevelStrategy();
         });
-
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.TOP_LEFT);
@@ -176,132 +165,6 @@ public class TicTacTouJavaFX extends Application {
         stage.show();
     }
 
-    private void levelOfDificule() {
-        Button button0 = buttons.get(0);
-        Button button1 = buttons.get(1);
-        Button button2 = buttons.get(2);
-        Button button3 = buttons.get(3);
-        Button button4 = buttons.get(4);
-        Button button5 = buttons.get(5);
-        Button button6 = buttons.get(6);
-        Button button7 = buttons.get(7);
-        Button button8 = buttons.get(8);
-
-        ImageView imageView0 = ((ImageView) button0.getGraphic());
-        ImageView imageView1 = ((ImageView) button1.getGraphic());
-        ImageView imageView2 = ((ImageView) button2.getGraphic());
-        ImageView imageView3 = ((ImageView) button3.getGraphic());
-        ImageView imageView4 = ((ImageView) button4.getGraphic());
-        ImageView imageView5 = ((ImageView) button5.getGraphic());
-        ImageView imageView6 = ((ImageView) button6.getGraphic());
-        ImageView imageView7 = ((ImageView) button7.getGraphic());
-        ImageView imageView8 = ((ImageView) button8.getGraphic());
-
-
-        if ((imageView0 != null && imageView0.getImage().equals(x)) ||
-                (imageView1 != null && imageView1.getImage().equals(x)) ||
-                (imageView2 != null && imageView2.getImage().equals(x)) ||
-                (imageView3 != null && imageView3.getImage().equals(x)) ||
-                (imageView4 != null && imageView4.getImage().equals(x)) ||
-                (imageView5 != null && imageView5.getImage().equals(x)) ||
-                (imageView6 != null && imageView6.getImage().equals(x)) ||
-                (imageView7 != null && imageView7.getImage().equals(x)) ||
-                (imageView8 != null && imageView8.getImage().equals(x))) {
-            if (imageView4 == null) {
-                button4.fire();
-            } else if (imageView0 != null && imageView1 != null && imageView2 == null){
-                button2.fire();
-            } else if (imageView8 == null) {
-                button8.fire();
-            } else if (imageView1 == null) {
-                button1.fire();
-            } else if (imageView7 == null) {
-                button7.fire();
-            } else if (imageView6 == null) {
-                button6.fire();
-            } else if (imageView2 == null) {
-                button2.fire();
-            } else if (imageView5 == null) {
-                button5.fire();
-            } else if (imageView3 == null) {
-                button3.fire();
-            }
-        }
-
-//        if (!buttons.get(4).isDisabled()) {
-//            button4.fire();
-//        } else if (buttons.get(0).isDisabled() && buttons.get(8).isDisabled()) {
-//            button1.fire();
-//        } else if (buttons.get(2).isDisabled() && buttons.get(6).isDisabled()) {
-//            button1.fire();
-//        } else if (buttons.get(0).isDisabled() && buttons.get(8).isDisabled()) {
-//            button8.fire();
-//        } else if (buttons.get(2).isDisabled() && buttons.get(6).isDisabled()) {
-//            button6.fire();
-//        } else if (buttons.get(6).isDisabled() && buttons.get(2).isDisabled()) {
-//            button2.fire();
-//        } else if (buttons.get(8).isDisabled() && buttons.get(0).isDisabled()) {
-//            button0.fire();
-//        } else if (!buttons.get(0).isDisabled()) {
-//            button0.fire();
-//        } else if (!buttons.get(2).isDisabled()) {
-//            button2.fire();
-//        } else if (!buttons.get(6).isDisabled()) {
-//            button6.fire();
-//        } else if (!buttons.get(8).isDisabled()) {
-//            button8.fire();
-//        } else if (!buttons.get(1).isDisabled()) {
-//            button1.fire();
-//        } else if (!buttons.get(3).isDisabled()) {
-//            button3.fire();
-//        } else if (!buttons.get(5).isDisabled()) {
-//            button5.fire();
-//        } else if (!buttons.get(7).isDisabled()) {
-//            button7.fire();
-//        } else {
-//            makeComputerMove();
-//        }
-            }
-
-//        if (imageView0 != null && imageView0.getImage().equals(x)) {
-//            if (imageView4 == null) {
-//                button4.fire();
-//            } else if (imageView8 == null) {
-//                button8.fire();
-//            } else if (imageView1 == null) {
-//                button1.fire();
-//            } else if (imageView7 == null) {
-//                button7.fire();
-//            } else if (imageView6 == null) {
-//                button6.fire();
-//            } else if (imageView2 == null) {
-//                button2.fire();
-//            } else if (imageView5 == null) {
-//                button5.fire();
-//            } else if (imageView3 == null) {
-//                button3.fire();
-//            }
-//        }
-//
-//        if ((isTurnX && isComputerX && emptyButtons.size() > 0) || (!isComputerX && !isTurnX && emptyButtons.size() > 0) && (button0.getGraphic() != null)) {
-////            random.nextInt(emptyButtons.size());
-////            emptyButtons.get(4).fire();
-//            button4.fire();
-//        }else {
-//
-//        }
-//        if ((button8.getGraphic() != null)) {
-//            button1.fire();
-//        }
-//        if ((button7.getGraphic() != null)) {
-//            button6.fire();
-//        }
-//        if ((button2.getGraphic() != null)) {
-//            button5.fire();
-//        }
-
-
-
     private void cleanup() {
         emptyButtons.clear();
         buttons.clear();
@@ -315,11 +178,9 @@ public class TicTacTouJavaFX extends Application {
     private void reset(Stage stage) {
         cleanup();
         startGame(stage);
-
     }
 
     private void gameScore() {
-
     }
 
     @Override
@@ -332,7 +193,6 @@ public class TicTacTouJavaFX extends Application {
         checkHorizontal();
         checkVertical();
         checekDiagonal();
-
     }
 
     private void checekDiagonal() {
@@ -391,7 +251,6 @@ public class TicTacTouJavaFX extends Application {
                 }
             }
         }
-
     }
 
     private void endGame(Image image) {
@@ -408,22 +267,10 @@ public class TicTacTouJavaFX extends Application {
         }
         addScore(image);
         alert.showAndWait();
-
-
     }
 
     private void makeComputerMove() {
-        if (easyLevel) {
-            if ((isTurnX && isComputerX && emptyButtons.size() > 0) || (!isComputerX && !isTurnX && emptyButtons.size() > 0)) {
-                int index = random.nextInt(emptyButtons.size());
-                emptyButtons.get(index).fire();
-            }
-        } else {
-             if ((isTurnX && isComputerX && emptyButtons.size() > 0) || (!isComputerX && !isTurnX && emptyButtons.size() > 0))
-            {
-                levelOfDificule();
-            }
-        }
+        computerStrategy.computerMove(emptyButtons, buttons, isComputerX, isTurnX, x);
     }
 
     private void addScore(Image image) {
@@ -440,6 +287,4 @@ public class TicTacTouJavaFX extends Application {
             tableO.setText("0 = " + oScore);
         }
     }
-
-
 }

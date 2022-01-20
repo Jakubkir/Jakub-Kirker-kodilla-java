@@ -6,11 +6,11 @@ public class RunFlight {
         SearchngFlight searchngFlight = new SearchngFlight();
         Flight flight = new Flight("Balice", "Moskwa");
 
-        try{
+        try {
             searchngFlight.findFilght(flight);
-        }catch (RouteNotFoundException e) {
+        } catch (RouteNotFoundException e) {
             System.out.println("Route not finding, error:" + e);
-        }finally {
+        } finally {
             System.out.println("Awley SEE YOU");
         }
 

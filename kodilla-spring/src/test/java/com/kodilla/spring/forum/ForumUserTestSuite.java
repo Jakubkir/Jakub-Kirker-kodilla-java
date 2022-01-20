@@ -26,6 +26,7 @@ public class ForumUserTestSuite {
         //Then
         assertEquals("John Smith", name);
     }
+
     @Test
     void testContext() {
         //Given

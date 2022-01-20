@@ -7,7 +7,7 @@ public interface ArrayOperations {
         IntStream.range(0, numbers.length)
                 .forEach(index -> System.out.println(numbers[index]));
 
-      double average =  IntStream.range(0, numbers.length)
+        double average = IntStream.range(0, numbers.length)
                 .map(index -> numbers[index])
                 .average()
                 .getAsDouble();

@@ -13,6 +13,7 @@ class FileReaderTestSuite {
         // when & then
         assertDoesNotThrow(() -> fileReader.readFile());
     }
+
     @Test
     void whenFileDosentExistsReadFileShouldThrowException() {
         // given
@@ -21,6 +22,7 @@ class FileReaderTestSuite {
         // when & then
         assertThrows(FileReaderException.class, () -> fileReader.readFile(fileName));
     }
+
     @Test
     public void testReadFileWithName() {
         // given

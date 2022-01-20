@@ -23,6 +23,7 @@ class ForumTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
+
     @Test
     void testAddPost() {
         //Given
@@ -35,6 +36,7 @@ class ForumTestSuite {
         //Then
         Assertions.assertEquals(1, forumUser.getPostsQuantity());
     }
+
     @Test
     void testAddComment() {
         //Given
@@ -48,6 +50,7 @@ class ForumTestSuite {
         //Then
         Assertions.assertEquals(1, forumUser.getCommentsQuantity());
     }
+
     @Test
     void testGetPost() {
         //Given
@@ -63,6 +66,7 @@ class ForumTestSuite {
         //Then
         Assertions.assertEquals(thePost, retrievedPost);
     }
+
     @Test
     void testGetComment() {
         //Given
@@ -80,7 +84,8 @@ class ForumTestSuite {
         //Then
         Assertions.assertEquals(theComment, retrievedComment);
     }
-//    @Test
+
+    //    @Test
 //    void testGetComment() {
 //        //Given
 //        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
@@ -112,6 +117,7 @@ class ForumTestSuite {
         //Then
         Assertions.assertFalse(result);
     }
+
     @Test
     void testRemovePost() {
         //Given
@@ -127,6 +133,7 @@ class ForumTestSuite {
         Assertions.assertTrue(result);
         Assertions.assertEquals(0, forumUser.getPostsQuantity());
     }
+
     @Test
     void testRemoveComment() {
         //Given

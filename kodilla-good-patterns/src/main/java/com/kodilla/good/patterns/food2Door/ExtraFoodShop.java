@@ -7,7 +7,7 @@ public class ExtraFoodShop implements FoodProducent {
         if (quantity > 0) {
             System.out.println("The " + foodProducent + " can delivery product.");
             return true;
-        }else {
+        } else {
             System.out.println("Please order more than zero");
             return false;
         }

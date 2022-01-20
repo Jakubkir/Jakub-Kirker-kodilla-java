@@ -7,7 +7,7 @@ public class HealthyShop implements FoodProducent {
         if (unit != null) {
             System.out.println("The " + foodProducent + " can delivery product.");
             return true;
-        }else {
+        } else {
             System.out.println("Please chose the unit");
             return false;
         }

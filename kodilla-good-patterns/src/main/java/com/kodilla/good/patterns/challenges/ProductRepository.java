@@ -11,8 +11,9 @@ public class ProductRepository {
             "Samolot", new BigDecimal(24.99),
             "Rowerek", new BigDecimal(99.99)
     );
-    public void price (BigDecimal price){
+
+    public void price(BigDecimal price) {
         BigDecimal prices = productPrices.get(productPrices);
     }
-        }
+}
 

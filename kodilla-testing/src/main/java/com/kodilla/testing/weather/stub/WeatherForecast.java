@@ -23,22 +23,22 @@ public class WeatherForecast {
 
     }
 
-    public double calculateAverageTempertures()
-    {
+    public double calculateAverageTempertures() {
         double averageTemperatures = 0.0;
 
-        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()){
+        for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
             averageTemperatures += temperature.getValue();
         }
-            averageTemperatures /= temperatures.getTemperatures().size();
-            return averageTemperatures;
+        averageTemperatures /= temperatures.getTemperatures().size();
+        return averageTemperatures;
 
     }
+
     public double calculateMedianeTempertures() {
         List<Double> temperaturesList = new ArrayList<>(temperatures.getTemperatures().values());
         Collections.sort(temperaturesList);
 
-        if (temperaturesList.size() %2 != 0) {
+        if (temperaturesList.size() % 2 != 0) {
             return temperaturesList.get(temperaturesList.size() / 2);
         } else {
             double a = temperaturesList.get(temperaturesList.size() / 2);

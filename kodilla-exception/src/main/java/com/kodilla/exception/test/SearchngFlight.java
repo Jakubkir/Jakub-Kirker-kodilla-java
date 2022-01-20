@@ -21,10 +21,10 @@ public class SearchngFlight {
             throw new RouteNotFoundException();
         }
         if ((airportMap().containsKey(flight.getArrivalAirport())) &&
-        (airportMap().containsKey(flight.getDepartureAirport()))
+                (airportMap().containsKey(flight.getDepartureAirport()))
                 && (airportMap().get(flight.getArrivalAirport()))) {
             System.out.println("You cant fly to:" + flight.getArrivalAirport() + "from" + flight.getDepartureAirport());
-        } else{
+        } else {
             System.out.println("Find different directions");
             throw new RouteNotFoundException();
         }

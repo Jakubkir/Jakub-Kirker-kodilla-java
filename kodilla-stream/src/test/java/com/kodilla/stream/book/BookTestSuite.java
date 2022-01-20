@@ -1,6 +1,7 @@
 package com.kodilla.stream.book;
 
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -25,6 +26,7 @@ class BookTestSuite {
         }
         assertEquals(3, numberOfBooksPublicatedAfter2007);
     }
+
     @Test
     void testGetListUsingIntStream() {
         //Given

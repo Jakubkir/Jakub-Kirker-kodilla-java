@@ -14,6 +14,7 @@ public enum Season {
         this.singleRoomPrice = singleRoomPrice;
         this.doubleRoomPrice = doubleRoomPrice;
     }
+
     public BigDecimal getSingleRoomPrice() {
         return singleRoomPrice;
     }

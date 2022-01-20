@@ -6,7 +6,7 @@ public class GlutenFreeShop implements FoodProducent {
         if ((quantity > 100) && ("kg".equals(unit))) {
             System.out.println("The " + foodProducent + " can delivery product.");
             return true;
-        }else {
+        } else {
             System.out.println("Order less");
             return false;
         }
