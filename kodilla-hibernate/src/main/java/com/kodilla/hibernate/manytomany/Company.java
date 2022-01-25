@@ -6,6 +6,13 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.retrieveWithThreeFristLetters",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE SUBSTRING (COMPANY_NAME, 1, 3) = :PARTNAME",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
