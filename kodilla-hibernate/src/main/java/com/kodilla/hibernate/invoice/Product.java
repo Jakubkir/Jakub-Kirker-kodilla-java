@@ -13,13 +13,14 @@ public class Product {
     private List<Item> item = new ArrayList<>();
 
 
-    public Product (){
+    public Product() {
 
     }
 
     public Product(String name) {
         this.name = name;
     }
+
     @Id
     @GeneratedValue
     @NotNull
@@ -31,6 +32,7 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
+
     @NotNull
     @Column(name = "PRODUCT_NAME")
     public String getName() {
@@ -40,6 +42,7 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "")
     public List<Item> getItem() {
         return item;
