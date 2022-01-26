@@ -1,17 +1,15 @@
 package com.kodilla.testing.shape;
 
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import com.kodilla.testing.shape.ShapeCollector;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class ShapeCollectorTestSuite {
@@ -51,7 +49,7 @@ public class ShapeCollectorTestSuite {
         int actualListSieze = check.getShapeList().size();
         //Then
 
-        Assertions.assertEquals(expectedListSize, actualListSieze);
+        assertEquals(expectedListSize, actualListSieze);
     }
 
     @Test
@@ -70,7 +68,7 @@ public class ShapeCollectorTestSuite {
         testList.removeFigure(new Square(12));
         int actualListSieze = testList.getShapeList().size();
         //Then
-        Assertions.assertEquals(expectedListSize, actualListSieze);
+        assertEquals(expectedListSize, actualListSieze);
     }
 
     @Test
@@ -88,9 +86,9 @@ public class ShapeCollectorTestSuite {
         Shape shape3 = testList.getFigure(3);
 
         //Then
-        Assert.assertEquals(triangle, shape1);
-        Assert.assertEquals(null, shape2);
-        Assert.assertEquals(null, shape3);
+        assertEquals(triangle, shape1);
+        assertEquals(null, shape2);
+        assertEquals(null, shape3);
     }
 
     @Test

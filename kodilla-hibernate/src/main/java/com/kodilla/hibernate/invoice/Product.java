@@ -43,7 +43,7 @@ public class Product {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     public List<Item> getItem() {
         return item;
     }

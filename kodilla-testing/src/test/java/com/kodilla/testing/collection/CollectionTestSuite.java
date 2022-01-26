@@ -1,12 +1,15 @@
 package com.kodilla.testing.collection;
 
-import org.junit.*;
 
-import java.util.*;
 
-import com.kodilla.testing.collection.OddNumbersExterminator;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class CollectionTestSuite {
@@ -28,7 +31,7 @@ public class CollectionTestSuite {
         ArrayList<Integer> listNumbers = OddNumbersExterminator.exterminate(emptyList);
         System.out.println("Testing" + listNumbers);
         //Then
-        Assert.assertEquals(emptyList, listNumbers);
+        assertEquals(emptyList, listNumbers);
     }
 
     @Test
@@ -41,6 +44,6 @@ public class CollectionTestSuite {
         ArrayList<Integer> listNumbers = OddNumbersExterminator.exterminate(list);
         System.out.println("Testing" + listNumbers);
         //Then
-        Assert.assertEquals(oddList, listNumbers);
+        assertEquals(oddList, listNumbers);
     }
 }
