@@ -1,5 +1,7 @@
 package com.kodilla.stream.book;
 
+import java.util.Objects;
+
 public final class Book {
 
     private final String author;
@@ -39,5 +41,18 @@ public final class Book {
                 ", yearOfPublication=" + yearOfPublication +
                 ", signature='" + signature + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return yearOfPublication == book.yearOfPublication && Objects.equals(author, book.author) && Objects.equals(title, book.title) && Objects.equals(signature, book.signature);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(author, title, yearOfPublication, signature);
     }
 }

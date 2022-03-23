@@ -56,14 +56,14 @@ class CompanyDaoTestSuite {
         assertNotEquals(0, dataMaestersId);
         assertNotEquals(0, greyMatterId);
 
-        //CleanUp
-        //try {
-        //    companyDao.deleteById(softwareMachineId);
-        //    companyDao.deleteById(dataMaestersId);
-        //    companyDao.deleteById(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
+//        CleanUp
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 
     @Test
@@ -103,8 +103,8 @@ class CompanyDaoTestSuite {
         int greyoMatterId = greyoMatter.getId();
 
         //When
-        List<Employee> lastNameEqualsParam = employeeDao.retrieveWithsLastname("Smith");
-        List<Company> withsLastname = companyDao.retrieveWithThreeFristLetters("Gre");
+        List<Employee> lastNameEqualsParam = employeeDao.retrieveWithLastname("Smith");
+        List<Company> withsLastname = companyDao.retrieveWithThreeFirstLetters("Gre");
 
         //Then
         assertEquals(1, lastNameEqualsParam.size());
