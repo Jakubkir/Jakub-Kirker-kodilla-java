@@ -1,4 +1,4 @@
-package com.kodilla.patters2.facade;
+package com.kodilla.patterns2.facade;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

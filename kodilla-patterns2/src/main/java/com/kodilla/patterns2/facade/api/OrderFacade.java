@@ -32,8 +32,8 @@ public class OrderFacade {
         }
         try {
             for (ItemDto orderItem : order.getItems()) {
-                LOGGER.info("Adding item " + orderItem.getProductId() + ", " + orderItem.getQty() + " pcs");
-                shopService.addItem(orderId, orderItem.getProductId(), orderItem.getQty());
+                LOGGER.info("Adding item " + orderItem.getProductId() + ", " + orderItem.getQuantity() + " pcs");
+                shopService.addItem(orderId, orderItem.getProductId(), orderItem.getQuantity());
             }
             BigDecimal value = shopService.calculateValue(orderId);
             LOGGER.info("Order value is: " + value + " USD");

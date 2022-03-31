@@ -1,4 +1,4 @@
-package com.kodilla.patters2.aop.calculator;
+package com.kodilla.patterns2.aop.calculator;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

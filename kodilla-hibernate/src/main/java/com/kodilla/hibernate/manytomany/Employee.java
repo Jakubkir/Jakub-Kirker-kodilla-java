@@ -5,10 +5,17 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-        @NamedQuery(
-                name = "Employee.retrieveWithsLastname",
-                query = "FROM Employee WHERE lastname = :LASTNAME"
-        )
+        @NamedQueries({
+                @NamedQuery(
+                        name = "Employee.retrieveWithLastname",
+                        query = "FROM Employee WHERE lastname = concat('%',:LASTNAME,'%')"
+                ),
+
+                @NamedQuery(
+                        name = "Employee.retrieveEmployeeWithPartLastName",
+                        query = "FROM Employee WHERE lastname = concat('%',:PARTLASTNAME,'%')"
+                )
+        })
 
 @Entity
 @Table(name = "EMPLOYEES")

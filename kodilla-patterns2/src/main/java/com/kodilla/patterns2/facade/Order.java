@@ -1,5 +1,9 @@
 package com.kodilla.patterns2.facade;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
     private ProductService productService;
     private final List<Item> items = new ArrayList<>();
@@ -39,7 +43,7 @@ public class Order {
 
     public void setVerified(boolean verified) { isVerified = verified; }
 
-    public boolean isSubmitted() { return isSubmmitted; }
+    public boolean isSubmitted() { return isSubmitted; }
 
     public void setSubmitted(boolean submitted) { isSubmitted = submitted; }
 }

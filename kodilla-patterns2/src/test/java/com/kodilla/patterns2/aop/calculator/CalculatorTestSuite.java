@@ -1,6 +1,5 @@
-package com.kodilla.patters2.aop.calculator;
+package com.kodilla.patterns2.aop.calculator;
 
-import com.kodilla.patterns2.aop.calculator.Calculator;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,7 +63,7 @@ class CalculatorTestSuite {
         //When
         BigDecimal result = calculator.factorial(new BigDecimal("1000"));
         //Then
-        logger.info("Testing factorial method");
+        LOGGER.info("Testing factorial method");
         System.out.println(result);
         assertTrue(BigDecimal.ONE.compareTo(result) < 0);
     }

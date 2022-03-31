@@ -14,10 +14,10 @@ class ForumTopicTestSuite {
         ForumUser johnSmith = new ForumUser("John Smith");
         ForumUser ivoneEscobar= new ForumUser("Ivone Escobar");
         ForumUser jessiePinkman = new ForumUser("Jessie Pinkman");
-        javaHelpForum.registryObserver(johnSmith);
-        javaToolsForum.registryObserver(ivoneEscobar);
-        javaHelpForum.registryObserver(jessiePinkman);
-        javaToolsForum.registryObserver(jessiePinkman);
+        javaHelpForum.registerObserver(johnSmith);
+        javaToolsForum.registerObserver(ivoneEscobar);
+        javaHelpForum.registerObserver(jessiePinkman);
+        javaToolsForum.registerObserver(jessiePinkman);
         // When
         javaHelpForum.addPost("Hi everyoe! Could you help me with for loop?");
         javaHelpForum.addPost("Better try to use while loop in this case.");

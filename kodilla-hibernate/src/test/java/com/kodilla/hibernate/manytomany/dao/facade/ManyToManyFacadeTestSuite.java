@@ -3,7 +3,7 @@ package com.kodilla.hibernate.manytomany.dao.facade;
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
-import com.kodilla.hibernate.manytomany.facade.ManyToManyFacade;
+import com.kodilla.hibernate.manytomany.facade.ManyTomanyFacade;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 public class ManyToManyFacadeTestSuite {
     @Autowired
-    private ManyToManyFacade manyToManyFacade;
+    private ManyTomanyFacade manyTomanyFacade;
     @Autowired
     private CompanyDao companyDao;
     @Test
@@ -61,8 +61,8 @@ public class ManyToManyFacadeTestSuite {
         int greyoMasterId=greyoMaster.getId();
 
         //When
-        List<Employee> employees= manyToManyFacade.retrieveEmployeeWithPartLastname("%sky%");
-        List<Company> companies= manyToManyFacade.retrieveCompanyWithPartName("%oft%");
+        List<Employee> employees= manyTomanyFacade.retrieveEmployeeWithPartLastname("sky");
+        List<Company> companies= manyTomanyFacade.retrieveCompanyWithPartName("oft");
 
         //Then
         assertEquals(1, employees.size());
@@ -72,15 +72,14 @@ public class ManyToManyFacadeTestSuite {
         assertEquals("Software Machine", companies.get(0).getName());
 
 
-
-//        //CleanUp
-//        try {
-//            companyDao.delete(softwareMachineId);
-//            companyDao.delete(dataMaestersId);
-//            companyDao.delete(greyMatterId);
-//            companyDao.delete(greyoMasterId);
-//        } catch (Exception e) {
-//            //do nothing
-//        }
+        //CleanUp
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+            companyDao.deleteById(greyoMasterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 }
